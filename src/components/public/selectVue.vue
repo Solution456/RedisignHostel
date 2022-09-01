@@ -33,10 +33,10 @@ const selectedPerson = ref(people[0])
 
   <div class="select-group flex gap-6">
     <Listbox v-model="selectedPerson">
-      <div class="relative mt-1">
+      <div class="relative">
         <ListboxButton
           class="relative flex
-          h-8
+          h-11
           w-64
           items-center
           justify-between

@@ -36,9 +36,6 @@ const onSlideChange = () => {
       disableOnInteraction: false,
     }"
     :centeredSlides="true"
-    :zoom="{
-      maxRatio: 5
-    }"
     :slides-per-view="1.5"
     :space-between="30"
     :navigation="true"
@@ -46,7 +43,7 @@ const onSlideChange = () => {
     @swiper="onSwiper"
     @slideChange="onSlideChange"
   >
-    <swiper-slide :zoom="true" v-for="item in items" :key="item.id">
+    <swiper-slide class=" shadow-lg"  v-for="item in items" :key="item.id">
       <CarouselCard :imgURL="item.url"></CarouselCard>
     </swiper-slide>
   </swiper>

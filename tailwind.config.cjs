@@ -25,7 +25,8 @@ module.exports = {
       'blue-500':'#3b82f6',
       'blue-600':'#2563eb',
       'blue-700':'#1d4ed8',
-      'blue-300':'#93c5fd'
+      'blue-300':'#93c5fd',
+      'blue-opac': 'rgb(var(--color-blu-opac) / 0.5)'
 
 
     },

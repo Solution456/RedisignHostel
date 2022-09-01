@@ -14,6 +14,18 @@ const routes = [
         path: '/auth',
         name: 'auth',
         component: () => import('../Pages/Auth/AuthPage.vue')
+    },
+
+    {
+        path:'/floors',
+        name:'floors',
+        component: () => import('../Pages/FloorPage/index.vue'),
+    },
+    {
+        path:'/floors/:id',
+        name:'FloorPage',
+        component: () => import('../Pages/FloorPage/Floor/index.vue'),
+        props: true
     }
 ]
 
