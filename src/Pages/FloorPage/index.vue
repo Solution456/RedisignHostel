@@ -1,6 +1,16 @@
 <script setup>
 import CardLayout from "../../components/public/cardLayout.vue";
 import BaselineArrowUpward from "../../assets/svg/baseline-arrow-upward.vue";
+import { useRouter } from "vue-router";
+const router = useRouter()
+
+function pushRoute(nameRoute, param){
+    
+    router.push({name:nameRoute,params:param})
+}
+
+
+
 </script>
 
 
@@ -27,7 +37,8 @@ import BaselineArrowUpward from "../../assets/svg/baseline-arrow-upward.vue";
         "
       >
         <div class="floors__content-item" v-for="item in 12" :key="item">
-          <CardLayout class="h-72">
+         
+          <CardLayout class="h-72" @click="pushRoute('FloorPage',{id:item+2})">
             <div class="flex flex-col h-full justify-center items-stretch">
               <div
                 class="
