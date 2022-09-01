@@ -41,7 +41,7 @@ const selectedPerson = ref(people[0])
           items-center
           justify-between
           rounded-lg
-          bg-secondary
+          bg-blue-500
           p-2
           text-xs text-white"
         >
