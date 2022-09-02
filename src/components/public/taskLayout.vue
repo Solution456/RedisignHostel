@@ -1,0 +1,19 @@
+<template>
+  <div
+    class="
+      flex
+      items-center
+      justify-between
+      bg-white
+      text-sm
+      font-medium
+      shadow-md
+      p-3
+      tracking-wider
+      rounded-lg
+      sm:p-4
+    "
+  >
+    <slot></slot>
+  </div>
+</template>

@@ -26,6 +26,11 @@ const routes = [
         name:'FloorPage',
         component: () => import('../Pages/FloorPage/Floor/index.vue'),
         props: true
+    },
+    {
+        path:'/profile',
+        name:'profile',
+        component: () => import('../Pages/Profile/index.vue')
     }
 ]
 

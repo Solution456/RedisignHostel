@@ -12,8 +12,8 @@ const links = [
   },
   {
     id: 3,
-    name: "Выход",
-    link: "''",
+    name: "Профиль",
+    link: "/profile",
   },
 ];
 </script>
