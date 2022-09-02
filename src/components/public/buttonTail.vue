@@ -5,6 +5,7 @@ const props = defineProps({
     default: "primary",
   },
 });
+
 </script>
 
 
@@ -27,7 +28,7 @@ const props = defineProps({
     "
     :class="[state === 'primary'?' from-blue-500 via-blue-600 to-blue-700  focus:ring-blue-300 shadow-blue-500/50'
     :state === 'danger'?'from-red-500 via-red-600 to-red-700 focus:outline-none focus:ring-red-300 shadow-red-500/50'
-    :state === 'success'? ' from-red-500 via-red-600 to-red-700  focus:ring-red-300 shadow-red-500/50':'']"
+    :state === 'success'? ' from-green-500 via-green-600 to-green-700  focus:ring-green-300 shadow-green-500/50':'']"
   >
     <slot>Кнопка</slot>
   </button>

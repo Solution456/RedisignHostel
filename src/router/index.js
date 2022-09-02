@@ -9,6 +9,12 @@ const routes = [
         name: 'home',
         component: HomePage,
     },
+    {
+        path:'/event/:id',
+        name:'event',
+        component: () => import('../Pages/Event/index.vue'),
+        props:true
+    },
 
     {
         path: '/auth',

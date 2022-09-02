@@ -201,7 +201,7 @@ const selectItem = (item) => {
               6 этаж - 303 комната
             </div>
           </div>
-          <div class="profile-main__bio hidden md:block">
+          <div class="profile-main__bio border-y hidden md:block">
             <InfoBlock>
               <template #title> Номер телефона </template>
               <template #description> +7-399-333-25-25 </template>
