@@ -9,6 +9,12 @@ const routes = [
         name: 'home',
         component: HomePage,
     },
+    {
+        path:'/event/:id',
+        name:'event',
+        component: () => import('../Pages/Event/index.vue'),
+        props:true
+    },
 
     {
         path: '/auth',
@@ -26,6 +32,11 @@ const routes = [
         name:'FloorPage',
         component: () => import('../Pages/FloorPage/Floor/index.vue'),
         props: true
+    },
+    {
+        path:'/profile',
+        name:'profile',
+        component: () => import('../Pages/Profile/index.vue')
     }
 ]
 
