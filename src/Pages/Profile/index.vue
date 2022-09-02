@@ -3,14 +3,55 @@ import InfoBlock from "../../components/public/InfoBlock.vue";
 import { TabGroup, TabList, Tab, TabPanels, TabPanel } from "@headlessui/vue";
 import ButtonTail from "../../components/public/buttonTail.vue";
 import TaskLayout from "../../components/public/taskLayout.vue";
+import Dialog from "../../components/public/dialog.vue";
+import InputGroup from "../../components/public/inputGroup.vue";
+import DropBox from "../../components/public/dropBox.vue";
+import { ref } from "vue";
+
 
 const tabHeader = ["Мои мероприятия", "Редактировать запрос"];
+
+const Active = ref(false)
+const selectedItem = ref(false)
+
+const openDialog = () =>{
+    Active.value = !Active.value
+    console.log(Active.value)
+}
+
+const selectItem = (item) => {
+    selectedItem.value = {title: item}
+    Active.value = !Active.value
+
+    console.log(selectedItem.value, Active.value)
+}   
+
+
+
 </script>
 
 
 
 <template>
   <div class="wrapper">
+    <Dialog v-if="selectedItem" @CloseDialog="openDialog" :show=Active>
+        <template #title-dialog>
+            <div class="text-center">
+                {{selectedItem?.title}}
+            </div>
+        </template>
+        <template #dialog-inner>
+            <div class="mx-auto w-full px-4 pt-8 pb-14 sm:px-6 sm:pb-20 sm:pt-12 lg:px-8 xl:px-10">
+                <InputGroup name="Название мероприятия" :value=selectedItem?.title disabled/>
+                <InputGroup name="Дата проведения" :value=selectedItem?.title disabled/>
+                <DropBox></DropBox>
+            </div>
+        </template>
+        <template #dialog-actions>
+            <ButtonTail>Подтвердить</ButtonTail>
+            <ButtonTail @click="openDialog" state="danger">Отмена</ButtonTail>
+        </template>
+    </Dialog>
     <div
       class="profile-main mx-auto flex w-full shrink-0 flex-col md:px4 xl:px-6"
     >
@@ -306,7 +347,7 @@ const tabHeader = ["Мои мероприятия", "Редактировать 
                         <div class="ltr:ml-2 rtl:mr-2">Title events<span class="block pt-0.5 text-xs font-normal capitalize text-gray-600 dark:text-gray-400">date events</span></div>
                       </div>
                       <div class="overflow-hidden text-ellipsis -tracking-wider ltr:pl-2 rtl:pr-2">
-                        <ButtonTail/>
+                        <ButtonTail @click="selectItem(item)">Открыть</ButtonTail>
                       </div>
                     </TaskLayout>
                     
