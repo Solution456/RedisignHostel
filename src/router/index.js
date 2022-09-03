@@ -45,10 +45,12 @@ const routes = [
         component: () => import('../Pages/FloorElder/Flat/index.vue'),
         props: true
     },
+    {
         path:'/profile',
         name:'profile',
         component: () => import('../Pages/Profile/index.vue')
-    }
+    },
+
 
 ]
 
