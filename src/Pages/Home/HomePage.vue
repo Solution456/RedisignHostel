@@ -53,10 +53,10 @@ const items = [
         </div>
     </div>
     <div class="right-section flex flex-col w-2/3 sm:w-full">
-      <div class="filter relative flex justify-end">
+      <div class="filter relative flex justify-center sm:justify-end">
         <SelectVue/>
       </div>
-      <div class="main-content mt-7 p-5  border-t border-dashed border-gray-200 grid gap-6 sm:grid-cols-2 md:grid-cols-3 3xl:grid-cols-3">
+      <div class="main-content mt-7 p-0 sm:pt-5 border-t border-dashed border-gray-200 grid gap-6 sm:grid-cols-2 md:grid-cols-3 3xl:grid-cols-3">
         <div class="main-content-item" v-for="item in items" :key="item.id">
             <CardLayout>
                 <div class="p-4">

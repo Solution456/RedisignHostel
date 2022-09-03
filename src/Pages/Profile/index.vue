@@ -340,7 +340,10 @@ const selectItem = (item) => {
                                 max-width: 100%;
                               "
                               >
-                              <Icon class="w-8 h-8 sm:w-10 sm:h-10" icon="ion:unlink-sharp"/>
+                              <Icon class="w-8 h-8  sm:w-10 sm:h-10" icon="ion:unlink-sharp"
+                              :class="item?.status === 'ongoing'?'text-primary'
+                              :item?.status ==='fsa'?'text-green-500':'text-red-500'"
+                              />
                             </span>
                             </span>
                         </div>
