@@ -24,18 +24,18 @@ function pushRoute(nameRoute, param){
         <!-- <img class=" rounded-lg object-center bg-cover h-full" :src="imgURL" alt=""> -->
     </div>
     <div class="card-slide__fade"></div>
-    <div class="card-slide__content text-start text-white flex flex-col justify-between py-12 pl-8 absolute bottom-0 top-0 left-0 overflow-hidden text-ellipsis min-h-0">
+    <div class="card-slide__content text-start sm  text-white flex flex-col justify-between py-12 pl-8 absolute bottom-0 top-0 left-0 overflow-hidden text-ellipsis min-h-0">
         <div class="flex flex-col">
-            <div class="text-subtitle text-xl text-primary font-bold">
+            <div class="text-subtitle text-lg sm:text-xl text-primary font-bold">
                 Lorem, ipsum.
             </div>
-            <div class="text-description mt-2 mb-1 overflow-hidden font-normal text-lg">
+            <div class="text-description mt-2 mb-1 overflow-hidden font-normal text-sm sm:text-md md:text-lg">
                 Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ipsa, veniam.
             </div>
             <div class="text-date text-primary text-xs font-bold">05/05/2000</div>
         </div>
         <div class="card-slide__actions">
-        <ButtonTail @click="pushRoute('event',{id:item.id})">Посмотреть</ButtonTail>
+        <ButtonTail   @click="pushRoute('event',{id:item.id})">Посмотреть</ButtonTail>
     </div>
     </div>
     
@@ -85,7 +85,10 @@ function pushRoute(nameRoute, param){
             transition: .3s cubic-bezier(0.23, .8, 0.5, 1);
         }
         .card-slide__content{
-            right: 50%;
+            right: 0%;
+            @media only screen and (min-width: 640px) {
+                right: 50%;
+            }
         }
     }
 </style>
