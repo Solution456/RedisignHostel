@@ -34,10 +34,22 @@ const routes = [
         props: true
     },
     {
+
+        path:'/floor-elder',
+        name:'FloorOfElder',
+        component: () => import('../Pages/FloorElder/index.vue'),
+    },
+    {
+        path:'/floor-elder/:id',
+        name:'Flat',
+        component: () => import('../Pages/FloorElder/Flat/index.vue'),
+        props: true
+    },
         path:'/profile',
         name:'profile',
         component: () => import('../Pages/Profile/index.vue')
     }
+
 ]
 
 const router = createRouter({

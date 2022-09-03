@@ -4,9 +4,10 @@
 
 
 @layer base {
-    :root {
-      --color-blu-opac: 50 105 246;
-      
-      /* ... */
-    }
+  :root {
+    --color-blu-opac: 50 105 246;
+
+    /* ... */
   }
+}
+
