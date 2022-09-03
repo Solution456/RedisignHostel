@@ -31,12 +31,10 @@ const removeFixedClassHeader = () => {
 }
 
 onMounted(()=>{
-  console.log('mounted')
   addFixedClassHeader()
 })
 
 onUnmounted(() => {
-  console.log('unmounted')
   removeFixedClassHeader()
 })
 
