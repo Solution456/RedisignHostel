@@ -50,6 +50,7 @@ module.exports = {
       sans: ['Graphik', 'sans-serif'],
       serif: ['Merriweather', 'serif'],
     },
+
     extend: {
       backgroundImage:{
         'authImg': "url(./assets/Img/back_aside.png)"
