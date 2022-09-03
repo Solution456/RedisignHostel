@@ -2,6 +2,8 @@
 import SameInfoBlock from "../../components/public/sameInfoBlock.vue";
 import { TabGroup, TabList, Tab, TabPanels, TabPanel } from "@headlessui/vue";
 import ButtonTail from "../../components/public/buttonTail.vue";
+import {CssFixedHeader, cssHeader} from '../../composable/CssClass.js'
+import { onMounted, onUnmounted } from "@vue/runtime-core";
 
 const props = defineProps({
   id: {
@@ -9,12 +11,41 @@ const props = defineProps({
   },
 });
 
+
+const addFixedClassHeader= () => {
+  let element = document.getElementById('head')
+  CssFixedHeader.forEach(item => {
+    element.classList.add(item)
+  })
+
+}
+
+const removeFixedClassHeader = () => {
+  let element = document.getElementById('head')
+  CssFixedHeader.forEach(item => {
+    element.classList.remove(item)
+  })
+  cssHeader.forEach( item => {
+    element.classList.add(item)
+  })
+}
+
+onMounted(()=>{
+  console.log('mounted')
+  addFixedClassHeader()
+})
+
+onUnmounted(() => {
+  console.log('unmounted')
+  removeFixedClassHeader()
+})
+
 const tabHeader = ["Описание", "Ссылки"];
 </script>
 
 
 <template>
-  <div class="flex flex-grow mx-auto px-4 pt-24 pb-16 sm:px-6 sm:pb-20 lg:px-8 xl:px-10 xl:pb-24 3xl:px-12 !pb-0">
+  <div class="flex flex-grow mx-auto px-4 pt-20 sm:px-6 sm:pb-20 lg:px-8 !pb-0 xl:px-10 xl:pb-24">
     <div
       class="
         mx-auto
@@ -263,7 +294,7 @@ const tabHeader = ["Описание", "Ссылки"];
                           text-primary
                         "
                       > Описание</h3>
-                      <div class="text-sm leading-6 -tracking-wider text-blue-600 dark:text-gray-400">Fisherian Runaways, Child of #48 Bat Veil &amp; #42 Screw Nose. This mushroom is the result of the cross-breeding of two original one of a kind generative mushrooms donated back to the Fisherian Runaways project their generous owner.</div>
+                      <div class="text-sm leading-6 -tracking-wider text-blue-600 dark:text-gray-400">Fisherian Runaways, Child of #48 Bat Veil &amp; #42 Screw Nose. This mushroom is the result of the cross-breeding of two original one of a kind generative mushrooms donated back to the Fisherian Runaways project their generous owner. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ab laudantium magni maiores alias. Qui quas tempore cumque? Ab odio ut cupiditate sunt maxime labore esse doloremque. Rem, ut, eveniet molestias cum, placeat dolor aliquam assumenda hic fuga mollitia laboriosam. Perferendis esse, nisi illum repudiandae dolor ullam architecto quo autem quas enim, deleniti possimus error dicta provident consectetur ipsa magni modi repellendus id, labore ducimus laborum ipsum temporibus! Aspernatur maiores molestias reprehenderit blanditiis perferendis reiciendis deserunt, voluptates tempore corporis. Tenetur atque fugiat amet repellat et quia rem excepturi. Odit voluptates magnam eligendi maxime error, veritatis consequatur quae excepturi ipsa dolor recusandae?</div>
                     </div>
                   </div>
                 </TabPanel>
