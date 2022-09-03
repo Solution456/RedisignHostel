@@ -44,7 +44,7 @@ const onSlideChange = () => {
     @slideChange="onSlideChange"
   >
     <swiper-slide class=" shadow-lg"  v-for="item in items" :key="item.id">
-      <CarouselCard :imgURL="item.url"></CarouselCard>
+      <CarouselCard :item="item"></CarouselCard>
     </swiper-slide>
   </swiper>
 </template>
