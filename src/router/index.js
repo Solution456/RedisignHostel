@@ -9,6 +9,12 @@ const routes = [
         name: 'home',
         component: HomePage,
     },
+    {
+        path:'/event/:id',
+        name:'event',
+        component: () => import('../Pages/Event/index.vue'),
+        props:true
+    },
 
     {
         path: '/auth',
@@ -28,6 +34,7 @@ const routes = [
         props: true
     },
     {
+
         path:'/floor-elder',
         name:'FloorOfElder',
         component: () => import('../Pages/FloorElder/index.vue'),
@@ -38,6 +45,11 @@ const routes = [
         component: () => import('../Pages/FloorElder/Flat/index.vue'),
         props: true
     },
+        path:'/profile',
+        name:'profile',
+        component: () => import('../Pages/Profile/index.vue')
+    }
+
 ]
 
 const router = createRouter({

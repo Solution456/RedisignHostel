@@ -4,6 +4,15 @@ import SideCard from "../../components/Home/SideCard/index.vue";
 import SelectVue from "../../components/public/selectVue.vue";
 import CardLayout from "../../components/public/cardLayout.vue";
 import ButtonTail from "../../components/public/buttonTail.vue";
+import { useRouter } from "vue-router";
+const router = useRouter()
+
+
+function pushRoute(nameRoute, param){
+    
+    router.push({name:nameRoute,params:param})
+}
+
 const items = [
   {
     id: 1,
@@ -64,7 +73,7 @@ const items = [
                         date picker
                     </div>
                     <div class="mt-6 text-center">
-                        <ButtonTail>Посмотреть</ButtonTail>
+                        <ButtonTail @click="pushRoute('event', {id:item.id})">Посмотреть</ButtonTail>
                     </div>
                 </div>
             </CardLayout>

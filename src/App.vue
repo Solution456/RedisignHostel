@@ -15,7 +15,7 @@ onMounted(() => {
 
 <template >
   <div class="div">
-    <header v-if="active" class="h-14 border-b border-blue-700">
+    <header v-if="active" id="head" class="h-14 border-b border-blue-700">
       <headerVue></headerVue>
     </header>
     <main class="min-h-screen bg-background pt-4">

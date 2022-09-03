@@ -1,17 +1,26 @@
 <script setup>
+import { useRouter } from 'vue-router';
 import ButtonTail from '../../public/buttonTail.vue';
 const props = defineProps({
-    imgURL:{
-        type: String,
+    item:{
+        type: Object,
         require:true,
     }
 })
+
+const router = useRouter()
+
+
+function pushRoute(nameRoute, param){
+    
+    router.push({name:nameRoute,params:param})
+}
 </script>
 
 
 <template>
 <div class="card-slide">
-    <div class="image" :style="`background-image: url('${imgURL}')`">
+    <div class="image" :style="`background-image: url('${item?.url}')`">
         <!-- <img class=" rounded-lg object-center bg-cover h-full" :src="imgURL" alt=""> -->
     </div>
     <div class="card-slide__fade"></div>
@@ -26,7 +35,7 @@ const props = defineProps({
             <div class="text-date text-primary text-xs font-bold">05/05/2000</div>
         </div>
         <div class="card-slide__actions">
-        <ButtonTail>Посмотреть</ButtonTail>
+        <ButtonTail @click="pushRoute('event',{id:item.id})">Посмотреть</ButtonTail>
     </div>
     </div>
     
