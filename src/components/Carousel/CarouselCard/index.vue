@@ -21,21 +21,22 @@ function pushRoute(nameRoute, param){
 <template>
 <div class="card-slide">
     <div class="image" :style="`background-image: url('${item?.url}')`">
-        <!-- <img class=" rounded-lg object-center bg-cover h-full" :src="imgURL" alt=""> -->
     </div>
     <div class="card-slide__fade"></div>
     <div class="card-slide__content text-start sm  text-white flex flex-col justify-between py-12 pl-8 absolute bottom-0 top-0 left-0 overflow-hidden text-ellipsis min-h-0">
         <div class="flex flex-col">
             <div class="text-subtitle text-lg sm:text-xl text-primary font-bold">
-                Lorem, ipsum.
+                {{item?.title || 'error'}}
             </div>
             <div class="text-description mt-2 mb-1 overflow-hidden font-normal text-sm sm:text-md md:text-lg">
-                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ipsa, veniam.
+                {{item?.description}}
             </div>
-            <div class="text-date text-primary text-xs font-bold">05/05/2000</div>
+            <div class="text-date text-primary text-xs font-bold">
+                {{$filters.formatedDate(item?.date)}}
+            </div>
         </div>
         <div class="card-slide__actions">
-        <ButtonTail   @click="pushRoute('event',{id:item.id})">Посмотреть</ButtonTail>
+        <ButtonTail  @click="pushRoute('event',{id:item.id})">Посмотреть</ButtonTail>
     </div>
     </div>
     

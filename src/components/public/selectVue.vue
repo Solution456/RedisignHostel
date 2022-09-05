@@ -9,6 +9,13 @@ import {
   ListboxOption,
 } from "@headlessui/vue";
 
+const props = defineProps({
+  optionsItems: {
+    type:Array,
+    required:true,
+    default:[{name:''}]
+  }
+})
 
 const people = [
   { name: 'Wade Cooper' },
@@ -18,7 +25,7 @@ const people = [
   { name: 'Tanya Fox' },
   { name: 'Hellen Schmidt' },
 ]
-const selectedPerson = ref(people[0])
+const selectedOption = ref(props.optionsItems[0])
 
 
 </script>
@@ -32,7 +39,7 @@ const selectedPerson = ref(people[0])
 
 
   <div class="select-group flex gap-6">
-    <Listbox v-model="selectedPerson">
+    <Listbox v-model="selectedOption">
       <div class="relative">
         <ListboxButton
           class="relative flex
@@ -45,7 +52,7 @@ const selectedPerson = ref(people[0])
           p-2
           text-xs text-white"
         >
-          <span class="block truncate">{{ selectedPerson.name }}</span>
+          <span class="block truncate">{{ selectedOption.name }}</span>
           <span
             class="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-2"
           >
@@ -61,9 +68,9 @@ const selectedPerson = ref(people[0])
           >
             <ListboxOption
               v-slot="{ active, selected }"
-              v-for="person in people"
-              :key="person.name"
-              :value="person"
+              v-for="option in optionsItems"
+              :key="option.name"
+              :value="option"
               as="template"
             >
               <li
@@ -78,7 +85,7 @@ const selectedPerson = ref(people[0])
                     selected ? 'font-medium' : 'font-normal',
                     'block truncate',
                   ]"
-                  >{{ person.name }}</span
+                  >{{ option.name }}</span
                 >
                 <span
                   v-if="selected"

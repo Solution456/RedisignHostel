@@ -5,45 +5,21 @@ import SelectVue from "../../components/public/selectVue.vue";
 import CardLayout from "../../components/public/cardLayout.vue";
 import ButtonTail from "../../components/public/buttonTail.vue";
 import { useRouter } from "vue-router";
+import { useEventsStore } from "../../stores/events/events";
 const router = useRouter()
+const {CaraouselEvents, OtherEvents} = useEventsStore()
+const options = [{name:'По возрастанию'}, {name:'По убыванию'}]
 
 
 function pushRoute(nameRoute, param){
     
     router.push({name:nameRoute,params:param})
 }
-
-const items = [
-  {
-    id: 1,
-    url: "https://i.pinimg.com/564x/6e/64/f3/6e64f3172b2d90cbc1a3f747018d2614.jpg",
-  },
-  {
-    id: 2,
-    url: "https://i.pinimg.com/564x/7e/17/fc/7e17fc8bde30ba84b543dcbf748113ab.jpg",
-  },
-  {
-    id: 3,
-    url: "https://i.pinimg.com/564x/4a/08/01/4a080139ea7cb3b378c82d12cda6b0cd.jpg",
-  },
-  {
-    id: 4,
-    url: "https://i.pinimg.com/564x/65/1c/88/651c88bdaa4faadb07cc86191ac41b24.jpg",
-  },
-  {
-    id: 5,
-    url: "https://i.pinimg.com/564x/60/7c/26/607c26bb39e351eda00e0ae5361cdbfe.jpg",
-  },
-  {
-    id: 6,
-    url: "https://i.pinimg.com/564x/20/4f/c7/204fc76beccb6cb52b36ff9defcb91cc.jpg",
-  },
-];
 </script>
 
 <template>
   <div class="carousel mt-3">
-    <CarouselVue :items="items"></CarouselVue>
+    <CarouselVue :items="CaraouselEvents"></CarouselVue>
   </div>
 
   <div class="wrapper justify-center">
@@ -54,10 +30,10 @@ const items = [
     </div>
     <div class="right-section flex flex-col w-2/3 sm:w-full">
       <div class="filter relative flex justify-center sm:justify-end">
-        <SelectVue/>
+        <SelectVue :options-items=options />
       </div>
       <div class="main-content mt-7 p-0 sm:pt-5 border-t border-dashed border-gray-200 grid gap-6 sm:grid-cols-2 md:grid-cols-3 3xl:grid-cols-3">
-        <div class="main-content-item" v-for="item in items" :key="item.id">
+        <div class="main-content-item" v-for="item in OtherEvents" :key="item.id">
             <CardLayout>
                 <div class="p-4">
                     <a href="#" class="flex items-center text-sm font-medium text-primary transition hover:text-blue-700">@{{item.id}}</a>
@@ -68,9 +44,9 @@ const items = [
                     </span>
                 </a>
                 <div class="p-5">
-                    <div class="text-sm font-medium text-primary">Text fasfas</div>
+                    <div class="text-sm font-medium text-primary">{{item.description}}</div>
                     <div class="mt-1.5 flex text-gray600">
-                        date picker
+                      {{$filters.formatedDate(item?.date)}}
                     </div>
                     <div class="mt-6 text-center">
                         <ButtonTail @click="pushRoute('event', {id:item.id})">Посмотреть</ButtonTail>
