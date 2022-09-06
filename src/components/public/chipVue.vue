@@ -11,7 +11,7 @@
         rounded-lg
         border border-solid
         text-center text-sm
-        font-medium
+        font-['Raleway-Medium']
         uppercase
         tracking-wide
         transition-all

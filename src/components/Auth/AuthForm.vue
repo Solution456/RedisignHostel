@@ -7,7 +7,7 @@ import buttonTailVue from '../public/buttonTail.vue';
 <template>
     <div class="container p-4">
         <div class="form flex flex-col justify-center mt-32">
-            <div class="form-title text-center text-primary text-4xl font-bold">
+            <div class="form-title text-center text-primary text-4xl">
                 Вход в @HostelApp
             </div>
 

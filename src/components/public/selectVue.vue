@@ -61,7 +61,7 @@ const selectedOption = ref(props.optionsItems[0])
         </ListboxButton>
 
         <transition
-          
+
         >
           <ListboxOptions
             class="z-10 absolute mt-1 max-h-60 w-full overflow-auto rounded-md bg-white py-1 text-base shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none sm:text-sm"
@@ -74,7 +74,7 @@ const selectedOption = ref(props.optionsItems[0])
               as="template"
             >
               <li
-              
+
                 :class="[
                   active ? 'bg-blue-300 text-white' : 'text-gray600',
                   'relative cursor-default select-none py-2 pl-10 pr-4',
@@ -82,7 +82,7 @@ const selectedOption = ref(props.optionsItems[0])
               >
                 <span
                   :class="[
-                    selected ? 'font-medium' : 'font-normal',
+                    selected ? `font-['Raleway-Medium']` : `font-['Raleway-Regular']`,
                     'block truncate',
                   ]"
                   >{{ option.name }}</span

@@ -16,7 +16,7 @@ const updateInput = (event) => {
   <div class="input-tail">
     <label
       for="input-group-1"
-      class="block mb-2 text-sm font-medium text-secondary"
+      class="block mb-2 text-sm font-['Raleway-Medium'] text-secondary"
     >
       <slot>Поле</slot>
     </label>

@@ -26,7 +26,6 @@ import ChipVue from "../../public/chipVue.vue";
         px-5
         py-2
         text-sm
-        font-bold
         uppercase
         text-primary
         tracking-wider

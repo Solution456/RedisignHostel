@@ -19,7 +19,7 @@ const props = defineProps({
   <div class="wrapper flex-col__imp justify-center">
     <section class="w-full">
       <div class="floors__intro bas p-8 bg-white rounded-lg shadow-lg">
-        <div class="title-text text-center text-3xl font-bold text-primary">
+        <div class="title-text text-center text-3xl text-primary">
           Этаж {{id}}
         </div>
       </div>
@@ -30,11 +30,11 @@ const props = defineProps({
             <div class="sideCard w-full max-w-full md:max-w-50">
             <CardLayout class="px-5
         py-2 flex flex-col justify-center">
-                <div class="card-title text-center text-primary font-bold text-xl mt-2">Erik Askarov</div>
+                <div class="card-title text-center text-primary text-xl mt-2">Erik Askarov</div>
                 <div class="card-avatar flex justify-center">
                     <img  height="115" width="115" class="rounded-full object-cover object-center my-5" src="https://i.pinimg.com/564x/04/38/f6/0438f6019adc4f0a1f8023ab5577fee4.jpg" alt="">
                 </div>
-                <div class="card-description text-center text-blue-600 font-medium mb-2">
+                <div class="card-description text-center text-blue-600 font-['Raleway-Medium'] mb-2">
                     Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam, impedit!
                 </div>
                 <div class="card-action mt-2 mb-6 flex justify-center">

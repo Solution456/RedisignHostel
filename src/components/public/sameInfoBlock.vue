@@ -20,7 +20,7 @@
       class="
         text-sm
         leading-5
-        font-medium
+        font-['Raleway-Medium']
         tracking-tighter
         mb-2
         uppercase
@@ -37,7 +37,7 @@
           justify-between
           bg-white
           text-sm
-          font-medium
+          font-['Raleway-Medium']
           shadow-md
           rounded-full
           p-2

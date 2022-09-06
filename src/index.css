@@ -11,3 +11,26 @@
   }
 }
 
+@font-face {
+  font-family: "Raleway-SemiBold";
+  src: url("/src/assets/fonts/Raleway/Raleway-SemiBold.woff") format("woff"),
+    url("/src/assets/fonts/Raleway/Raleway-SemiBold.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Raleway-Regular";
+  src: url("/src/assets/fonts/Raleway/Raleway-Regular.woff") format("woff"),
+    url("/src/assets/fonts/Raleway/Raleway-Regular.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Raleway-Bold";
+  src: url("/src/assets/fonts/Raleway/Raleway-Bold.woff") format("woff"),
+    url("/src/assets/fonts/Raleway/Raleway-Bold.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Raleway-Medium";
+  src: url("/src/assets/fonts/Raleway/Raleway-Medium.woff") format("woff"),
+    url("/src/assets/fonts/Raleway/Raleway-Medium.woff2") format("woff2");
+}

@@ -68,7 +68,7 @@ function closeModal() {
             >
               <DialogTitle
                 as="h3"
-                class="text-lg font-medium leading-6 text-blue-700"
+                class="text-lg font-['Raleway-Medium'] leading-6 text-blue-700"
               >
                 <slot name="title-dialog"></slot>
               </DialogTitle>

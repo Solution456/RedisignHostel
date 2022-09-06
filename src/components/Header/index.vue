@@ -23,6 +23,7 @@ const links = [
 
 <template>
   <div class="h-full flex justify-around items-center">
+
     <div class="user-info relative flex items-center gap-x-3 text-primary text-xl">
       <Menu >
         <MenuButton class="flex items-center gap-3 transition">

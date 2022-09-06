@@ -140,7 +140,7 @@ const mockHeader = ["Pool", "Earned", "ARP", "Liquidity", "Multiplier"];
                 class="
                   whitespace-nowrap
                   text-sm
-                  font-medium
+                  font-['Raleway-Medium']
                   uppercase
                   text-blue-700
                   ltr:ml-3
@@ -156,13 +156,13 @@ const mockHeader = ["Pool", "Earned", "ARP", "Liquidity", "Multiplier"];
             class="
               px-4
               text-xs
-              font-medium
+              font-['Raleway-Medium']
               tracking-wider
               text-blue-700
               sm:px-8 sm:text-sm
             "
           >
-            <span class="mb-1 block font-medium text-gray600 sm:hidden"
+            <span class="mb-1 block font-['Raleway-Medium'] text-gray600 sm:hidden"
               >Earned</span
             >
             0
@@ -171,13 +171,13 @@ const mockHeader = ["Pool", "Earned", "ARP", "Liquidity", "Multiplier"];
             class="
               px-4
               text-xs
-              font-medium
+              font-['Raleway-Medium']
               tracking-wider
               text-blue-700
               sm:px-8 sm:text-sm
             "
           >
-            <span class="mb-1 block font-medium text-gray600 sm:hidden"
+            <span class="mb-1 block font-['Raleway-Medium'] text-gray600 sm:hidden"
               >ARP</span
             >
             0
@@ -187,7 +187,7 @@ const mockHeader = ["Pool", "Earned", "ARP", "Liquidity", "Multiplier"];
               title-item
               px-4
               text-xs
-              font-medium
+              font-['Raleway-Medium']
               tracking-wider
               text-blue-700
               sm:px-8 sm:text-sm
@@ -200,7 +200,7 @@ const mockHeader = ["Pool", "Earned", "ARP", "Liquidity", "Multiplier"];
               title-item
               px-4
               text-xs
-              font-medium
+              font-['Raleway-Medium']
               tracking-wider
               text-blue-700
               sm:px-8 sm:text-sm

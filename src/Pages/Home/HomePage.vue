@@ -12,7 +12,7 @@ const options = [{name:'По возрастанию'}, {name:'По убыван�
 
 
 function pushRoute(nameRoute, param){
-    
+
     router.push({name:nameRoute,params:param})
 }
 </script>
@@ -36,7 +36,7 @@ function pushRoute(nameRoute, param){
         <div class="main-content-item" v-for="item in OtherEvents" :key="item.id">
             <CardLayout>
                 <div class="p-4">
-                    <a href="#" class="flex items-center text-sm font-medium text-primary transition hover:text-blue-700">@{{item.id}}</a>
+                    <a href="#" class="flex items-center text-sm font-['Raleway-Medium'] text-primary transition hover:text-blue-700">@{{item.id}}</a>
                 </div>
                 <a href="#" class="relative block w-full  pb-full">
                     <span class="box-border block overflow-hidden bg-none  border-0 m-0 p-0 absolute inset-0">
@@ -44,9 +44,9 @@ function pushRoute(nameRoute, param){
                     </span>
                 </a>
                 <div class="p-5">
-                    <div class="text-sm font-medium text-primary">{{item.description}}</div>
-                    <div class="mt-1.5 flex text-gray600">
-                      {{$filters.formatedDate(item?.date)}}
+                    <div class="text-sm font-['Raleway-Medium'] text-primary">{{item.description}}</div>
+                    <div class="mt-1.5 flex font-['Raleway-Regular'] text-gray600">
+                        {{$filters.formatedDate(item?.date)}}
                     </div>
                     <div class="mt-6 text-center">
                         <ButtonTail @click="pushRoute('event', {id:item.id})">Посмотреть</ButtonTail>

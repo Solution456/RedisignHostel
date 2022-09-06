@@ -46,9 +46,12 @@ module.exports = {
 
 
     },
-    fontFamily: {
-      sans: ['Graphik', 'sans-serif'],
-      serif: ['Merriweather', 'serif'],
+    extend: {
+      fontFamily: {
+        sans: ['Graphik', 'sans-serif'],
+        serif: ['Merriweather', 'serif'],
+        raleway: ['Raleway-SemiBold', 'Raleway-Regular', 'Raleway-Bold', 'Raleway-Medium', 'sans-serif']
+      },
     },
 
     extend: {
