@@ -75,7 +75,7 @@ const selectItem = (item) => {
           relative
           shrink-0
           overflow-hidden
-          z-10
+          z-2
           mx-auto
           -mt-12
           sm:-mt-14

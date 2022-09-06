@@ -19,7 +19,7 @@ const mockHeader = ["Pool", "Earned", "ARP", "Liquidity", "Multiplier"];
         md:flex-row md:items-center md:gap-6
       "
     >
-      <div class="flex items-center w-full justify-end gap-4 lg:gap-8">
+      <div class="flex flex-col sm:flex-row items-center w-full justify-end gap-4 lg:gap-8">
         <form
           class="relative flex w-full rounded-full md:w-auto lg:w-64"
           role="search"

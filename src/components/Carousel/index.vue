@@ -30,6 +30,7 @@ const onSlideChange = () => {
 
 <template>
   <swiper
+    class="!z-0"
     :modules="[Pagination, Navigation, Autoplay, Zoom]"
     :autoplay="{
       delay: 10000,
