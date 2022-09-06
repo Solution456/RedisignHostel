@@ -1,10 +1,14 @@
 <script setup>
-
 defineProps({
-  typeInput: String
-})
+  typeInput: { type:String, default: "text" },
+  modelValue: {
+    type:[String, Number]},
+});
 
-
+const emits = defineEmits(['update:modelValue'])
+const updateInput = (event) => {
+  emits('update:modelValue', event.target.value)
+}
 </script>
 
 
@@ -13,10 +17,9 @@ defineProps({
     <label
       for="input-group-1"
       class="block mb-2 text-sm font-['Raleway-Medium'] text-secondary"
-      >
-      <slot>Поле</slot>
-      </label
     >
+      <slot>Поле</slot>
+    </label>
     <div class="relative mb-6">
       <div
         class="
@@ -45,7 +48,7 @@ defineProps({
         </svg>
       </div>
       <input
-        :type=typeInput
+        :type="typeInput"
         class="
           bg-gray-50
           border border-primary
@@ -60,6 +63,8 @@ defineProps({
           pl-10
           p-2.5
         "
+        :value="modelValue"
+        @input="updateInput"
       />
     </div>
   </div>

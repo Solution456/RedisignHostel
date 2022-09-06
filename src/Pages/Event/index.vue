@@ -31,12 +31,10 @@ const removeFixedClassHeader = () => {
 }
 
 onMounted(()=>{
-  console.log('mounted')
   addFixedClassHeader()
 })
 
 onUnmounted(() => {
-  console.log('unmounted')
   removeFixedClassHeader()
 })
 
@@ -45,7 +43,7 @@ const tabHeader = ["Описание", "Ссылки"];
 
 
 <template>
-  <div class="flex flex-grow mx-auto px-4 pt-20 sm:px-6 sm:pb-20 lg:px-8 !pb-0 xl:px-10 xl:pb-24">
+  <div class=" scroll flex flex-grow mx-auto px-4 pt-20 sm:px-6 sm:pb-20 lg:px-8 !pb-0 xl:px-10 xl:pb-24">
     <div
       class="
         mx-auto
@@ -299,6 +297,24 @@ const tabHeader = ["Описание", "Ссылки"];
                     </div>
                   </div>
                 </TabPanel>
+                <TabPanel class="focus:outline-none">
+                  <div class="space-y-6">
+                    <div class="block">
+                      <h3
+                        class="
+                          text-sm
+                          leading-5
+                          font-medium
+                          tracking-tighter
+                          mb-2
+                          uppercase
+                          text-primary
+                        "
+                      > Ссылки</h3>
+                      <div class="text-sm leading-6 -tracking-wider text-blue-600 dark:text-gray-400"></div>
+                    </div>
+                  </div>
+                </TabPanel>
               </TabPanels>
             </TabGroup>
           </div>
@@ -316,10 +332,13 @@ const tabHeader = ["Описание", "Ссылки"];
   </div>
 </template>
 
+
+
 <style scoped>
 .block::-webkit-scrollbar-thumb {
     border-radius: 100px;
     background: #8070D4;
     border: 6px solid rgba(0,0,0,0.2);
+
 }
 </style>
