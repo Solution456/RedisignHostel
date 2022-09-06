@@ -6,10 +6,16 @@ import CardLayout from "../../components/public/cardLayout.vue";
 import ButtonTail from "../../components/public/buttonTail.vue";
 import { useRouter } from "vue-router";
 import { useEventsStore } from "../../stores/events/events";
+import { ref } from "@vue/reactivity";
 const router = useRouter()
 const {CaraouselEvents, OtherEvents} = useEventsStore()
 const options = [{name:'По возрастанию'}, {name:'По убыванию'}]
 
+const selectRadio = ref('')
+
+const selectedRadio = (props) => {
+  selectRadio.value = props
+}
 
 function pushRoute(nameRoute, param){
 
@@ -25,7 +31,7 @@ function pushRoute(nameRoute, param){
   <div class="wrapper justify-center">
     <div class="left-section hidden justify-center  md:w-1/3 md:flex">
         <div class="sideCard--left max-w-full md:max-w-50">
-            <SideCard></SideCard>
+            <SideCard @select="selectedRadio"></SideCard>
         </div>
     </div>
     <div class="right-section flex flex-col w-2/3 sm:w-full">

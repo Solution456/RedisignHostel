@@ -1,5 +1,4 @@
 <template>
-  <div class="radiogroup">
     <span
       class="
         p-2
@@ -25,5 +24,4 @@
     >
       <slot>Чип</slot>
     </span>
-  </div>
 </template>
