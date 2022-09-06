@@ -12,7 +12,7 @@ defineProps({
   <div class="input-tail">
     <label
       for="input-group-1"
-      class="block mb-2 text-sm font-medium text-secondary"
+      class="block mb-2 text-sm font-['Raleway-Medium'] text-secondary"
       >
       <slot>Поле</slot>
       </label
@@ -53,7 +53,7 @@ defineProps({
           rounded-lg
           focus:outline-none
           focus:border-primary
-          focus:ring-1 
+          focus:ring-1
           focus:ring-primary
           block
           w-full

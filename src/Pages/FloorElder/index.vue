@@ -7,6 +7,7 @@
     function pushRoute(nameRoute, param) {
 
       router.push({ name: nameRoute, params: param })
+      window.scrollTo(0, 0);
     }
 
 
@@ -17,7 +18,7 @@
       <div class="wrapper justify-center">
         <section class="flats w-full">
           <div class="flats__intro bas p-8 bg-white rounded-lg shadow-lg">
-            <div class="flats__text text-center text-3xl font-bold text-primary">
+            <div class="flats__text text-center text-3xl text-primary">
               Выберите квартиру
             </div>
           </div>
@@ -43,7 +44,6 @@
                       z-10
                       items-center
                       text-7xl
-                      font-bold
                       text-primary
                       justify-center
                     ">
@@ -57,7 +57,6 @@
                       items-center
                       text-5xl
                       z-0
-                      font-bold
                       centeredT
                       right-0
                       bottom-0

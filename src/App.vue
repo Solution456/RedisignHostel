@@ -14,7 +14,7 @@ onMounted(() => {
 </script>
 
 <template >
-  <div class="div">
+  <div class="div font-['Raleway-Bold']">
     <header v-if="active" id="head" class="h-14 border-b border-blue-700">
       <headerVue></headerVue>
     </header>

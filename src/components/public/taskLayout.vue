@@ -6,7 +6,7 @@
       justify-between
       bg-white
       text-sm
-      font-medium
+      font-['Raleway-Medium']
       shadow-md
       p-3
       tracking-wider

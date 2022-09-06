@@ -7,7 +7,7 @@ import ButtonTail from './buttonTail.vue';
 <template>
     <div class="mb-8">
         <div class="relative mb-3">
-            <span class="block text-sm font-medium uppercase tracking-wider text-primary">
+            <span class="block text-sm font-['Raleway-Medium'] uppercase tracking-wider text-primary">
                 Загрузка файла
             </span>
             <div class="rounden-lg border border-solid border-blue-300 bg-white p-4 sm:p-6">

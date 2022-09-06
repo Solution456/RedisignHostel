@@ -29,7 +29,7 @@ const links = [
           alt=""
         />
       </div>
-      <span>Erik Askarov</span>
+      <span class="">Erik Askarov</span>
     </div>
 
     <nav class="nav flex items-center">
