@@ -2,7 +2,7 @@
 import headerVue from "./components/Header/index.vue";
 
 import { ref } from "@vue/reactivity";
-import { onMounted } from "@vue/runtime-core";
+import { onMounted, watch } from "@vue/runtime-core";
 import {
   TransitionRoot,
   TransitionChild,
@@ -14,23 +14,37 @@ import Aside from "./components/aside/index.vue";
 
 const active = ref(true);
 const Show = ref(false)
+const isMobile = ref(false)
+
+const onResize = () => {
+  isMobile.value = window.innerWidth < 768 
+}
 
 const openDialog = () => {
   Show.value = !Show.value;
-  console.log(Show.value);
 };
 
 onMounted(() => {
+  window.addEventListener('resize', onResize);
   let htmlEl = document.querySelector("html");
   htmlEl.setAttribute("dir", "ltr");
   htmlEl.setAttribute("lang", "fa");
 });
+
+
+watch(isMobile, (newIsMobile) =>{
+  if (!newIsMobile){
+    Show.value = false
+  }
+})
+
+
 </script>
 
 <template >
   <div class="div font-['Raleway-Bold']">
-    <Dialog :open="Show">
-      <div class="fixed inset-0 bg-gray-700 bg-opacity-60 backdrop-blur opacity-100">
+    <Dialog :open="Show" @close="openDialog">
+      <div class="fixed  inset-0 bg-gray-700 bg-opacity-60 backdrop-blur opacity-100">
       </div>
       <div class="fixed inset-y-0 left-0 flex w-full max-w-full sm:w-auto translate-x-0">
         <aside class="top-0 z-40 h-full w-full max-w-full border-dashed border-gray-200 bg-white ltr:left-0 ltr:border-r rtl:right-0 rtl:border-1 xl:fixed xl:w-72 sm:w-80">
