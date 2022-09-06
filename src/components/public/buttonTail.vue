@@ -15,7 +15,7 @@ const props = defineProps({
     class="
       text-white
       shadow-lg
-      font-medium
+      font-['Raleway-Medium']
       rounded-lg
       text-sm
       px-8

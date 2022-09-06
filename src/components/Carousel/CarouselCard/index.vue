@@ -12,7 +12,7 @@ const router = useRouter()
 
 
 function pushRoute(nameRoute, param){
-    
+
     router.push({name:nameRoute,params:param})
 }
 </script>
@@ -25,10 +25,11 @@ function pushRoute(nameRoute, param){
     <div class="card-slide__fade"></div>
     <div class="card-slide__content text-start sm  text-white flex flex-col justify-between py-12 pl-8 absolute bottom-0 top-0 left-0 overflow-hidden text-ellipsis min-h-0">
         <div class="flex flex-col">
+
             <div class="text-subtitle text-lg sm:text-xl text-primary font-bold">
                 {{item?.title || 'error'}}
             </div>
-            <div class="text-description mt-2 mb-1 overflow-hidden font-normal text-sm sm:text-md md:text-lg">
+            <div class="text-description mt-2 mb-1 overflow-hidden font-['Raleway-Regular'] text-sm sm:text-md md:text-lg">
                 {{item?.description}}
             </div>
             <div class="text-date text-primary text-xs font-bold">
@@ -39,9 +40,9 @@ function pushRoute(nameRoute, param){
         <ButtonTail  @click="pushRoute('event',{id:item.id})">Посмотреть</ButtonTail>
     </div>
     </div>
-    
+
 </div>
-  
+
 </template>
 
 

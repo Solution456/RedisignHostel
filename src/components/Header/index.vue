@@ -2,11 +2,11 @@
 import { Menu, MenuButton, MenuItems, MenuItem } from "@headlessui/vue";
 import { ArrowLeftOnRectangleIcon } from "@heroicons/vue/24/outline/";
 import Hamburger from "../../assets/svg/hamburger.vue";
-const emits = defineEmits(['openModal'])
+const emits = defineEmits(["openModal"]);
 
 const open = () => {
-  emits('openModal')
-}
+  emits("openModal");
+};
 
 const links = [
   {
@@ -139,9 +139,8 @@ const links = [
           "
           aria-label="Hamburger"
         >
-          <span class=""
-            >
-            <Hamburger/>
+          <span class="">
+            <Hamburger />
           </span>
         </button>
       </div>

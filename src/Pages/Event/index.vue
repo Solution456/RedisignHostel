@@ -181,7 +181,7 @@ const tabHeader = ["Описание", "Ссылки"];
               <h2
                 class="
                   text-xl
-                  font-medium
+                  font-['Raleway-Medium']
                   leading-[1.45em]
                   -tracking-wider
                   text-primary
@@ -197,6 +197,7 @@ const tabHeader = ["Описание", "Ссылки"];
                 mt-1.5
                 inline-flex
                 items-center
+                font-['Raleway-Regular']
                 text-sm
                 -tracking-wider
                 text-blue-600
@@ -252,7 +253,7 @@ const tabHeader = ["Описание", "Ссылки"];
                         sm:py-3
                       "
                       :class="
-                        selected ? 'font-medium text-primary' : 'text-blue-600'
+                        selected ?  'font-[`Raleway-Medium`] text-primary' : 'text-blue-600'
                       "
                     >
                       <span class="flex w-full justify-between px-3 md:px-0">
@@ -285,14 +286,14 @@ const tabHeader = ["Описание", "Ссылки"];
                         class="
                           text-sm
                           leading-5
-                          font-medium
+                          font-['Raleway-Medium']
                           tracking-tighter
                           mb-2
                           uppercase
                           text-primary
                         "
                       > Описание</h3>
-                      <div class="text-sm leading-6 -tracking-wider text-blue-600 dark:text-gray-400">Fisherian Runaways, Child of #48 Bat Veil &amp; #42 Screw Nose. This mushroom is the result of the cross-breeding of two original one of a kind generative mushrooms donated back to the Fisherian Runaways project their generous owner. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ab laudantium magni maiores alias. Qui quas tempore cumque? Ab odio ut cupiditate sunt maxime labore esse doloremque. Rem, ut, eveniet molestias cum, placeat dolor aliquam assumenda hic fuga mollitia laboriosam. Perferendis esse, nisi illum repudiandae dolor ullam architecto quo autem quas enim, deleniti possimus error dicta provident consectetur ipsa magni modi repellendus id, labore ducimus laborum ipsum temporibus! Aspernatur maiores molestias reprehenderit blanditiis perferendis reiciendis deserunt, voluptates tempore corporis. Tenetur atque fugiat amet repellat et quia rem excepturi. Odit voluptates magnam eligendi maxime error, veritatis consequatur quae excepturi ipsa dolor recusandae?</div>
+                      <div class="text-sm leading-6 -tracking-wider font-['Raleway-Regular'] text-blue-600 dark:text-gray-400">Fisherian Runaways, Child of #48 Bat Veil &amp; #42 Screw Nose. This mushroom is the result of the cross-breeding of two original one of a kind generative mushrooms donated back to the Fisherian Runaways project their generous owner. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ab laudantium magni maiores alias. Qui quas tempore cumque? Ab odio ut cupiditate sunt maxime labore esse doloremque. Rem, ut, eveniet molestias cum, placeat dolor aliquam assumenda hic fuga mollitia laboriosam. Perferendis esse, nisi illum repudiandae dolor ullam architecto quo autem quas enim, deleniti possimus error dicta provident consectetur ipsa magni modi repellendus id, labore ducimus laborum ipsum temporibus! Aspernatur maiores molestias reprehenderit blanditiis perferendis reiciendis deserunt, voluptates tempore corporis. Tenetur atque fugiat amet repellat et quia rem excepturi. Odit voluptates magnam eligendi maxime error, veritatis consequatur quae excepturi ipsa dolor recusandae?</div>
                     </div>
                   </div>
                 </TabPanel>
@@ -332,8 +333,12 @@ const tabHeader = ["Описание", "Ссылки"];
 </template>
 
 
+
 <style scoped>
-.scroll{
-  scrollbar-gutter:stable;
+.block::-webkit-scrollbar-thumb {
+    border-radius: 100px;
+    background: #8070D4;
+    border: 6px solid rgba(0,0,0,0.2);
+
 }
 </style>

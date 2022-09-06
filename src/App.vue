@@ -28,6 +28,7 @@ onMounted(() => {
 </script>
 
 <template >
+<<<<<<< HEAD
   <div class="div">
     <Dialog :open="Show">
       <div class="fixed inset-0 bg-gray-700 bg-opacity-60 backdrop-blur opacity-100">
@@ -41,6 +42,11 @@ onMounted(() => {
     </Dialog>
     <header v-if="active" id="head" class="h-14 top-0 z-30 w-full px-4 transition-all duration-300 ltr:right-0 rtl:left-0 sm:px-4 lg:px-8 xl:px-10 bg-white border-b border-blue-700">
       <headerVue @open-modal="openDialog" ></headerVue>
+=======
+  <div class="div font-['Raleway-Bold']">
+    <header v-if="active" id="head" class="h-14 border-b border-blue-700">
+      <headerVue></headerVue>
+>>>>>>> c724c1ab6f2de6197189596f65e2dff354de77df
     </header>
     <main class="min-h-screen bg-background py-4">
       <router-view></router-view>

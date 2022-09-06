@@ -21,7 +21,7 @@ const props = defineProps({
 <template>
     <div class="mb-8">
         <div v-if="name !== 'title'" class="relative mb-3">
-            <span class="block text-sm font-medium uppercase tracking-wider text-blue-600">
+            <span class="block text-sm font-['Raleway-Medium'] uppercase tracking-wider text-blue-600">
                 {{name}}
             </span>
         </div>

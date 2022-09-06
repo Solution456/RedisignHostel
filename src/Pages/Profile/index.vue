@@ -19,8 +19,18 @@ const openDialog = () => {
 };
 
 const selectItem = (item) => {
+<<<<<<< HEAD
   selectedItem.value = { title: item };
   Active.value = !Active.value;
+=======
+    selectedItem.value = {title: item}
+    Active.value = !Active.value
+
+    console.log(selectedItem.value, Active.value)
+}
+
+
+>>>>>>> c724c1ab6f2de6197189596f65e2dff354de77df
 
   console.log(selectedItem.value, Active.value);
 };
@@ -195,7 +205,7 @@ const selectItem = (item) => {
             <h2
               class="
                 text-xl
-                font-medium
+                font-['Raleway-Medium']
                 tracking-tighter
                 text-blue-700
                 xl:text-2xl
@@ -207,7 +217,7 @@ const selectItem = (item) => {
               class="
                 mt-1
                 text-sm
-                font-medium
+                font-['Raleway-Medium']
                 tracking-tighter
                 text-blue-500
                 xl:mt-3
@@ -292,7 +302,7 @@ const selectItem = (item) => {
                       sm:py-3
                     "
                     :class="
-                      selected ? 'font-medium text-primary' : 'text-blue-600'
+                      selected ? `font-['Raleway-Medium'] text-primary` : 'text-blue-600'
                     "
                   >
                     <span class="flex w-full justify-between px-3 md:px-0">
@@ -401,6 +411,10 @@ const selectItem = (item) => {
                             >date events</span
                           >
                         </div>
+<<<<<<< HEAD
+=======
+                        <div class="ltr:ml-2 rtl:mr-2">Title events<span class="block pt-0.5 text-xs font-['Raleway-Regular'] capitalize text-gray-600 dark:text-gray-400">date events</span></div>
+>>>>>>> c724c1ab6f2de6197189596f65e2dff354de77df
                       </div>
                       <div
                         class="
@@ -416,6 +430,10 @@ const selectItem = (item) => {
                         >
                       </div>
                     </TaskLayout>
+<<<<<<< HEAD
+=======
+
+>>>>>>> c724c1ab6f2de6197189596f65e2dff354de77df
                   </div>
                 </div>
               </TabPanel>
