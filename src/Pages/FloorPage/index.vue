@@ -43,7 +43,7 @@ function pushRoute(nameRoute, param) {
                   h-2/3
                   flex
                   relative
-                  z-10
+                  z-3
                   items-center
                   text-7xl
                   text-primary
