@@ -44,8 +44,9 @@ function pushRoute(nameRoute, param){
                     </span>
                 </a>
                 <div class="p-5">
+
                     <div class="text-sm font-['Raleway-Medium'] text-primary">{{item.description}}</div>
-                    <div class="mt-1.5 flex font-['Raleway-Regular'] text-gray600">
+                    <div class="mt-1.5 text-sm flex font-['Raleway-Regular'] text-gray600">
                         {{$filters.formatedDate(item?.date)}}
                     </div>
                     <div class="mt-6 text-center">
