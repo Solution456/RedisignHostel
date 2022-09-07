@@ -8,11 +8,12 @@ import InputGroup from "../../components/public/inputGroup.vue";
 import DropBox from "../../components/public/dropBox.vue";
 import { ref } from "vue";
 import Application from "../../components/Application/index.vue";
-
+import Table from "../../components/Table/Table.vue";
 const tabHeader = ["Мои мероприятия", "Редактировать запрос"];
 
 const Active = ref(false);
 const selectedItem = ref(false);
+const residentId = ref(false);
 
 const openDialog = () => {
   Active.value = !Active.value;
@@ -25,6 +26,10 @@ const selectItem = (item) => {
 
   console.log(selectedItem.value, Active.value);
 };
+
+const openTable = (item) => {
+  residentId.value = item;
+}
 </script>
 
 <template>
@@ -382,7 +387,8 @@ const selectItem = (item) => {
             </TabPanels>
           </TabGroup>
         </div> -->
-        <Application></Application>
+        <Application v-if="!residentId" @selectItem="openTable"></Application>
+        <Table v-else></Table>
       </div>
     </div>
   </div>
