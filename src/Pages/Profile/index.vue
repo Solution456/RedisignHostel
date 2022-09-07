@@ -7,11 +7,13 @@ import Dialog from "../../components/public/dialog.vue";
 import InputGroup from "../../components/public/inputGroup.vue";
 import DropBox from "../../components/public/dropBox.vue";
 import { ref } from "vue";
-
+import Application from "../../components/Application/index.vue";
+import Table from "../../components/Table/Table.vue";
 const tabHeader = ["Мои мероприятия", "Редактировать запрос"];
 
 const Active = ref(false);
 const selectedItem = ref(false);
+const residentId = ref(false);
 
 const openDialog = () => {
   Active.value = !Active.value;
@@ -24,9 +26,11 @@ const selectItem = (item) => {
 
   console.log(selectedItem.value, Active.value);
 };
+
+const openTable = (item) => {
+  residentId.value = item;
+}
 </script>
-
-
 
 <template>
   <div class="wrapper">
@@ -67,11 +71,8 @@ const selectItem = (item) => {
         <ButtonTail @click="openDialog" state="danger">Отмена</ButtonTail>
       </template>
     </Dialog>
-    <div
-      class="profile-main mx-auto flex w-full shrink-0 flex-col md:px4 xl:px-6"
-    >
-      <figure
-        class="
+    <div class="profile-main mx-auto flex w-full shrink-0 flex-col md:px4 xl:px-6">
+      <figure class="
           relative
           shrink-0
           overflow-hidden
@@ -88,10 +89,8 @@ const selectItem = (item) => {
           sm:h-28 sm:w-28
           md:h-32 md:w-32
           shadow-lg
-        "
-      >
-        <span
-          style="
+        ">
+        <span style="
             box-sizing: border-box;
             display: inline-block;
             overflow: hidden;
@@ -104,10 +103,8 @@ const selectItem = (item) => {
             padding: 0px;
             position: relative;
             max-width: 100%;
-          "
-        >
-          <span
-            style="
+          ">
+          <span style="
               box-sizing: border-box;
               display: block;
               width: initial;
@@ -118,11 +115,8 @@ const selectItem = (item) => {
               margin: 0px;
               padding: 0px;
               max-width: 100%;
-            "
-          >
-            <img
-              alt=""
-              aria-hidden="true"
+            ">
+            <img alt="" aria-hidden="true"
               src="data:image/svg+xml,%3csvg%20xmlns=%27http://www.w3.org/2000/svg%27%20version=%271.1%27%20width=%27160%27%20height=%27160%27/%3e"
               style="
                 display: block;
@@ -134,16 +128,10 @@ const selectItem = (item) => {
                 border: 0px;
                 margin: 0px;
                 padding: 0px;
-              "
-            />
+              " />
           </span>
-          <img
-            alt="Author"
-            src="https://i.pinimg.com/564x/04/38/f6/0438f6019adc4f0a1f8023ab5577fee4.jpg"
-            decoding="async"
-            data-nimg="intrinsic"
-            class="rounded-full"
-            style="
+          <img alt="Author" src="https://i.pinimg.com/564x/04/38/f6/0438f6019adc4f0a1f8023ab5577fee4.jpg"
+            decoding="async" data-nimg="intrinsic" class="rounded-full" style="
               position: absolute;
               inset: 0px;
               box-sizing: border-box;
@@ -157,12 +145,10 @@ const selectItem = (item) => {
               max-width: 100%;
               min-height: 100%;
               max-height: 100%;
-            "
-          />
+            " />
         </span>
       </figure>
-      <div
-        class="
+      <div class="
           flex
           w-full
           flex-col
@@ -170,10 +156,8 @@ const selectItem = (item) => {
           md:flex-row md:pt-10
           lg:flex-row
           xl:pt-12
-        "
-      >
-        <div
-          class="
+        ">
+        <div class="
             shrink-0
             border-dashed border-gray-200
             md:w-72
@@ -181,38 +165,31 @@ const selectItem = (item) => {
             md:rtl:border-l md:rtl:pl-7
             lg:ltr:pr-10 lg:rtl:pl-10
             xl:ltr:pr-10 xl:rtl:pl-14
-          "
-        >
-          <div
-            class="
+          ">
+          <div class="
               profile-main__text
               text-center
               ltr:md:text-left
               rtl:md:text-right
               mb-5
-            "
-          >
-            <h2
-              class="
+            ">
+            <h2 class="
                 text-xl
                 font-['Raleway-Medium']
                 tracking-tighter
                 text-blue-700
                 xl:text-2xl
-              "
-            >
+              ">
               Erik Askarov
             </h2>
-            <div
-              class="
+            <div class="
                 mt-1
                 text-sm
                 font-['Raleway-Medium']
                 tracking-tighter
                 text-blue-500
                 xl:mt-3
-              "
-            >
+              ">
               6 этаж - 303 комната
             </div>
           </div>
@@ -228,10 +205,7 @@ const selectItem = (item) => {
             <InfoBlock class="border-y">
               <template #title> Social </template>
               <template #description>
-                <a
-                  href="vk/com"
-                  target="_blank"
-                  class="
+                <a href="vk/com" target="_blank" class="
                     mb-2
                     flex
                     items-center
@@ -240,8 +214,7 @@ const selectItem = (item) => {
                     transition
                     last:mb-0
                     hover:text-blue-700 hover:underline
-                  "
-                >
+                  ">
                   <Icon icon="ion:logo-vk" height="24px" />
                   @link/social
                 </a>
@@ -249,8 +222,7 @@ const selectItem = (item) => {
             </InfoBlock>
           </div>
         </div>
-        <div
-          class="
+        <!-- <div class="
             profile-actions
             grow
             pt-6
@@ -258,11 +230,9 @@ const selectItem = (item) => {
             md:-mt-2.5 md:pt-1.5 md:pb-0 md:ltr:pl-7
             lg:ltr:pl-10 lg:rtl:pr-10
             xl:ltr:pl-14 xl:rtl:pr-14
-          "
-        >
+          ">
           <TabGroup>
-            <TabList
-              class="
+            <TabList class="
                 relative
                 mb-6
                 bg-body
@@ -276,12 +246,10 @@ const selectItem = (item) => {
                 before:bg-gray-200
                 sm:gap-8 sm:rounded-none
                 md:before:h-0.5
-              "
-            >
+              ">
               <div class="flex gap-6 md:gap-8 xl:gap-10">
                 <Tab v-slot="{ selected }" v-for="tab in tabHeader" :key="tab">
-                  <button
-                    class="
+                  <button class="
                       relative
                       py-2
                       uppercase
@@ -300,8 +268,7 @@ const selectItem = (item) => {
                     <span class="flex w-full justify-between px-3 md:px-0">
                       {{ tab }}
                     </span>
-                    <span
-                      class="
+                    <span class="
                         absolute
                         left-0
                         right-0
@@ -312,9 +279,7 @@ const selectItem = (item) => {
                         rounded-lg
                         bg-primary
                         md:z-0
-                      "
-                      :class="selected ? 'block' : 'hidden'"
-                    ></span>
+                      " :class="selected ? 'block' : 'hidden'"></span>
                   </button>
                 </Tab>
               </div>
@@ -360,9 +325,7 @@ const selectItem = (item) => {
                               padding: 0px;
                               position: relative;
                               max-width: 100%;
-                            "
-                            ><span
-                              style="
+                            "><span style="
                                 box-sizing: border-box;
                                 display: block;
                                 width: initial;
@@ -423,7 +386,9 @@ const selectItem = (item) => {
               </TabPanel>
             </TabPanels>
           </TabGroup>
-        </div>
+        </div> -->
+        <Application v-if="!residentId" @selectItem="openTable"></Application>
+        <Table v-else></Table>
       </div>
     </div>
   </div>

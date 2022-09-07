@@ -17,7 +17,7 @@ const props = defineProps({
   <div class="wrapper flex-col__imp justify-center">
     <section class="flat w-full">
       <div class="flat__intro bas p-8 bg-white rounded-lg shadow-lg">
-        <div class="flat__text text-center text-3xl font-bold text-primary">
+        <div class="flat__text text-center text-3xl text-primary">
           Квартира {{ id }}
         </div>
       </div>

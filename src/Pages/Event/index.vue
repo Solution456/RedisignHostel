@@ -253,7 +253,7 @@ const tabHeader = ["Описание", "Ссылки"];
                         sm:py-3
                       "
                       :class="
-                        selected ?  'font-[`Raleway-Medium`] text-primary' : 'text-blue-600'
+                        selected ?  'text-primary' : `text-blue-600 font-['Raleway-Medium']`
                       "
                     >
                       <span class="flex w-full justify-between px-3 md:px-0">
@@ -304,7 +304,7 @@ const tabHeader = ["Описание", "Ссылки"];
                         class="
                           text-sm
                           leading-5
-                          font-medium
+                          font-['Raleway-Medium']
                           tracking-tighter
                           mb-2
                           uppercase
