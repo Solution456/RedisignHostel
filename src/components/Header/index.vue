@@ -46,10 +46,10 @@ const links = [
       >
         <MenuItems class="absolute left-0 mt-28 opacity-100 z-10 w-64 origin-top-right rounded-lg bg-white border border-gray-200 p-3 shadow-lg translate-y-0">
           <MenuItem>
-            <a class="flex items-center rounded-lg cursor-pointer px-3 py-2 text-sm font-medium uppercase text-blue-600 transition hover:bg-blue-300 hover:text-white">
+            <a class="flex items-center rounded-lg cursor-pointer px-3 py-2 text-sm font-['Raleway-Medium'] uppercase text-blue-600 transition hover:bg-blue-300 hover:text-white">
               <ArrowLeftOnRectangleIcon class="w-8 h-8"/>
               Выход
-              
+
             </a>
           </MenuItem>
         </MenuItems>

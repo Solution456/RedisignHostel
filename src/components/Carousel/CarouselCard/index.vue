@@ -26,13 +26,13 @@ function pushRoute(nameRoute, param){
     <div class="card-slide__content text-start sm  text-white flex flex-col justify-between py-12 pl-8 absolute bottom-0 top-0 left-0 overflow-hidden text-ellipsis min-h-0">
         <div class="flex flex-col">
 
-            <div class="text-subtitle text-lg sm:text-xl text-primary font-bold">
+            <div class="text-subtitle text-lg sm:text-xl text-primary">
                 {{item?.title || 'error'}}
             </div>
             <div class="text-description mt-2 mb-1 overflow-hidden font-['Raleway-Regular'] text-sm sm:text-md md:text-lg">
                 {{item?.description}}
             </div>
-            <div class="text-date text-primary text-xs font-bold">
+            <div class="text-date text-primary text-xs">
                 {{$filters.formatedDate(item?.date)}}
             </div>
         </div>
