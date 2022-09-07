@@ -11,39 +11,53 @@ import Application from "../../components/Application/index.vue";
 
 const tabHeader = ["Мои мероприятия", "Редактировать запрос"];
 
-const Active = ref(false)
-const selectedItem = ref(false)
+const Active = ref(false);
+const selectedItem = ref(false);
 
 const openDialog = () => {
-  Active.value = !Active.value
-  console.log(Active.value)
-}
+  Active.value = !Active.value;
+  console.log(Active.value);
+};
 
 const selectItem = (item) => {
-  selectedItem.value = { title: item }
-  Active.value = !Active.value
+  selectedItem.value = { title: item };
+  Active.value = !Active.value;
 
-  console.log(selectedItem.value, Active.value)
-}
-
-
-
+  console.log(selectedItem.value, Active.value);
+};
 </script>
-
-
 
 <template>
   <div class="wrapper">
-    <Dialog v-if="selectedItem" @CloseDialog="openDialog" :show=Active>
+    <Dialog v-if="selectedItem" @CloseDialog="openDialog" :show="Active">
       <template #title-dialog>
         <div class="text-center">
-          {{selectedItem?.title}}
+          {{ selectedItem?.title }}
         </div>
       </template>
       <template #dialog-inner>
-        <div class="mx-auto w-full px-4 pt-8 pb-14 sm:px-6 sm:pb-20 sm:pt-12 lg:px-8 xl:px-10">
-          <InputGroup name="Название мероприятия" :value=selectedItem?.title disabled />
-          <InputGroup name="Дата проведения" :value=selectedItem?.title disabled />
+        <div
+          class="
+            mx-auto
+            w-full
+            px-4
+            pt-8
+            pb-14
+            sm:px-6 sm:pb-20 sm:pt-12
+            lg:px-8
+            xl:px-10
+          "
+        >
+          <InputGroup
+            name="Название мероприятия"
+            :value="selectedItem?.title"
+            disabled
+          />
+          <InputGroup
+            name="Дата проведения"
+            :value="selectedItem?.title"
+            disabled
+          />
           <DropBox></DropBox>
         </div>
       </template>
@@ -57,7 +71,7 @@ const selectItem = (item) => {
           relative
           shrink-0
           overflow-hidden
-          z-10
+          z-2
           mx-auto
           -mt-12
           sm:-mt-14
@@ -174,16 +188,16 @@ const selectItem = (item) => {
               6 этаж - 303 комната
             </div>
           </div>
-          <div class="profile-main__bio border-y hidden md:block">
-            <InfoBlock>
+          <div class="profile-main__bio hidden md:block">
+            <InfoBlock class="border-y">
               <template #title> Номер телефона </template>
               <template #description> +7-399-333-25-25 </template>
             </InfoBlock>
-            <InfoBlock>
+            <InfoBlock class="border-y">
               <template #title> баллы </template>
               <template #description> 150 </template>
             </InfoBlock>
-            <InfoBlock>
+            <InfoBlock class="border-y">
               <template #title> Social </template>
               <template #description>
                 <a href="vk/com" target="_blank" class="
@@ -239,9 +253,13 @@ const selectItem = (item) => {
                       focus:outline-none
                       xs:py-2.5
                       sm:py-3
-                    " :class="
-                      selected ? `text-primary` : `text-blue-600 font-['Raleway-Medium']`
-                    ">
+                    "
+                    :class="
+                      selected
+                        ? `font-['Raleway-Medium'] text-primary`
+                        : `text-blue-600 font-['Raleway-Regular']`
+                    "
+                  >
                     <span class="flex w-full justify-between px-3 md:px-0">
                       {{ tab }}
                     </span>
@@ -264,11 +282,32 @@ const selectItem = (item) => {
             <TabPanels>
               <TabPanel class="focus:outline-none">
                 <div class="block">
-                  <div class="grid grid-cols-1 gap-3 sm:grid-cols-2 md:grid-cols-1 lg:grid-cols-2">
-                    <TaskLayout class="transition-transform hover:-translate-y-1" v-for="item in 6" :key="item">
+                  <div
+                    class="
+                      grid grid-cols-1
+                      gap-3
+                      sm:grid-cols-2
+                      md:grid-cols-1
+                      lg:grid-cols-2
+                    "
+                  >
+                    <TaskLayout
+                      class="transition-transform hover:-translate-y-1"
+                      v-for="item in 6"
+                      :key="item"
+                    >
                       <div class="flex item-center">
-                        <div class="text-blue-600 rounded-full w-8 h-8 sm:w-10 sm:h-10">
-                          <span style="
+                        <div
+                          class="
+                            text-blue-600
+                            rounded-full
+                            w-8
+                            h-8
+                            sm:w-10 sm:h-10
+                          "
+                        >
+                          <span
+                            style="
                               box-sizing: border-box;
                               display: inline-block;
                               overflow: hidden;
@@ -292,21 +331,51 @@ const selectItem = (item) => {
                                 margin: 0px;
                                 padding: 0px;
                                 max-width: 100%;
-                              ">
-                              <Icon class="w-8 h-8  sm:w-10 sm:h-10" icon="ion:unlink-sharp" :class="item?.status === 'ongoing'?'text-primary'
-                              :item?.status ==='fsa'?'text-green-500':'text-red-500'" />
+                              "
+                            >
+                              <Icon
+                                class="w-8 h-8 sm:w-10 sm:h-10"
+                                icon="ion:unlink-sharp"
+                                :class="
+                                  item?.status === 'ongoing'
+                                    ? 'text-primary'
+                                    : item?.status === 'fsa'
+                                    ? 'text-green-500'
+                                    : 'text-red-500'
+                                "
+                              />
                             </span>
                           </span>
                         </div>
-                        <div class="ltr:ml-2 rtl:mr-2">Title events<span
-                            class="block pt-0.5 text-xs font-['Raleway-Regular'] capitalize text-gray-600 dark:text-gray-400">date
-                            events</span></div>
+                        <div class="ltr:ml-2 rtl:mr-2">
+                          Title events<span
+                            class="
+                              block
+                              pt-0.5
+                              text-xs
+                              font-['Raleway-Regular']
+                              capitalize
+                              text-gray-600
+                              dark:text-gray-400
+                            "
+                            >date events</span
+                          >
+                        </div>
                       </div>
-                      <div class="overflow-hidden text-ellipsis -tracking-wider ltr:pl-2 rtl:pr-2">
-                        <ButtonTail @click="selectItem(item)">Открыть</ButtonTail>
+                      <div
+                        class="
+                          overflow-hidden
+                          text-ellipsis
+                          -tracking-wider
+                          ltr:pl-2
+                          rtl:pr-2
+                        "
+                      >
+                        <ButtonTail @click="selectItem(item)"
+                          >Открыть</ButtonTail
+                        >
                       </div>
                     </TaskLayout>
-
                   </div>
                 </div>
               </TabPanel>
