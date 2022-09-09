@@ -46,10 +46,38 @@ export const useEventsStore = defineStore('events', () => {
             title:'lorem ispum6',
             description:'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ipsa, veniam.'
         },
+          {
+            id: 7,
+            url: "https://i.pinimg.com/564x/20/4f/c7/204fc76beccb6cb52b36ff9defcb91cc.jpg",
+            date:new Date('10/25/2022'), 
+            title:'lorem ispum6',
+            description:'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ipsa, veniam.'
+        },
+          {
+            id: 8,
+            url: "https://i.pinimg.com/564x/20/4f/c7/204fc76beccb6cb52b36ff9defcb91cc.jpg",
+            date:new Date('10/26/2022'), 
+            title:'lorem ispum6',
+            description:'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ipsa, veniam.'
+        },
+          {
+            id: 9,
+            url: "https://i.pinimg.com/564x/20/4f/c7/204fc76beccb6cb52b36ff9defcb91cc.jpg",
+            date:new Date('10/27/2022'), 
+            title:'lorem ispum6',
+            description:'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ipsa, veniam.'
+        },
+          {
+            id: 10,
+            url: "https://i.pinimg.com/564x/20/4f/c7/204fc76beccb6cb52b36ff9defcb91cc.jpg",
+            date:new Date('10/12/2022'), 
+            title:'lorem ispum6',
+            description:'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ipsa, veniam.'
+        },
     ])
 
-    const CaraouselEvents = computed(() => events.value.filter(item =>  new Date() - item.date <= 720 * 60 * 60 * 1000))
-    const OtherEvents = computed( () => events.value.filter(item =>  new Date() - item.date > 720 * 60 * 60 * 1000))
+    const CaraouselEvents = computed(() => events.value.filter(item =>  Math.abs(new Date() - item.date) <= 720 * 60 * 60 * 1000))
+    const OtherEvents = computed( () => events.value.filter(item =>  Math.abs(new Date() - item.date) > 720 * 60 * 60 * 1000))
 
     return {events, CaraouselEvents, OtherEvents}
 })

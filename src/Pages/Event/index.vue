@@ -2,8 +2,9 @@
 import SameInfoBlock from "../../components/public/sameInfoBlock.vue";
 import { TabGroup, TabList, Tab, TabPanels, TabPanel } from "@headlessui/vue";
 import ButtonTail from "../../components/public/buttonTail.vue";
-import {CssFixedHeader, cssHeader} from '../../composable/CssClass.js'
+import {useFixedHeader} from '../../composables/FixedHeader'
 import { onMounted, onUnmounted } from "@vue/runtime-core";
+import AppLoader from "../../components/public/appLoader.vue";
 
 const props = defineProps({
   id: {
@@ -11,31 +12,15 @@ const props = defineProps({
   },
 });
 
+const {setFixedHeader, removeFixedHeader} = useFixedHeader()
 
-const addFixedClassHeader= () => {
-  let element = document.getElementById('head')
-  CssFixedHeader.forEach(item => {
-    element.classList.add(item)
-  })
-
-}
-
-const removeFixedClassHeader = () => {
-  let element = document.getElementById('head')
-  CssFixedHeader.forEach(item => {
-    element.classList.remove(item)
-  })
-  cssHeader.forEach( item => {
-    element.classList.add(item)
-  })
-}
 
 onMounted(()=>{
-  addFixedClassHeader()
+  setFixedHeader()
 })
 
 onUnmounted(() => {
-  removeFixedClassHeader()
+  removeFixedHeader()
 })
 
 const tabHeader = ["Описание", "Ссылки"];
