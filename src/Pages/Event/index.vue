@@ -2,7 +2,7 @@
 import SameInfoBlock from "../../components/public/sameInfoBlock.vue";
 import { TabGroup, TabList, Tab, TabPanels, TabPanel } from "@headlessui/vue";
 import ButtonTail from "../../components/public/buttonTail.vue";
-import {useFixedHeader} from '../../composables/FixedHeader'
+import { useFixedHeader } from "../../composables/FixedHeader";
 import { onMounted, onUnmounted } from "@vue/runtime-core";
 import AppLoader from "../../components/public/appLoader.vue";
 
@@ -12,23 +12,34 @@ const props = defineProps({
   },
 });
 
-const {setFixedHeader, removeFixedHeader} = useFixedHeader()
+const { setFixedHeader, removeFixedHeader } = useFixedHeader();
 
-
-onMounted(()=>{
-  setFixedHeader()
-})
+onMounted(() => {
+  setFixedHeader();
+});
 
 onUnmounted(() => {
-  removeFixedHeader()
-})
+  removeFixedHeader();
+});
 
 const tabHeader = ["Описание", "Ссылки"];
 </script>
 
 
 <template>
-  <div class=" scroll flex flex-grow mx-auto px-4 pt-20 sm:px-6 sm:pb-20 lg:px-8 !pb-0 xl:px-10 xl:pb-24">
+  <div
+    class="
+      scroll
+      flex flex-grow
+      mx-auto
+      px-4
+      pt-20
+      sm:px-6 sm:pb-20
+      lg:px-8
+      !pb-0
+      xl:px-10 xl:pb-24
+    "
+  >
     <div
       class="
         mx-auto
@@ -222,6 +233,7 @@ const tabHeader = ["Описание", "Ссылки"];
               >
                 <div class="flex gap-6 md:gap-8 xl:gap-10">
                   <Tab
+                    as="template"
                     v-slot="{ selected }"
                     v-for="tab in tabHeader"
                     :key="tab"
@@ -232,13 +244,13 @@ const tabHeader = ["Описание", "Ссылки"];
                         py-2
                         uppercase
                         tracking-wider
-                        hover:text-primary
                         focus:outline-none
-                        xs:py-2.5
                         sm:py-3
                       "
                       :class="
-                        selected ?  'text-primary' : `text-blue-600 font-['Raleway-Medium']`
+                        selected
+                          ? 'text-primary'
+                          : `text-blue-600 font-['Raleway-Medium'] hover:text-primary`
                       "
                     >
                       <span class="flex w-full justify-between px-3 md:px-0">
@@ -255,9 +267,12 @@ const tabHeader = ["Описание", "Ссылки"];
                           w-full
                           rounded-lg
                           bg-primary
+                          translate-effect
                           md:z-0
+                          transition-[width]
+                          duration-300
                         "
-                        :class="selected ? 'block' : 'hidden'"
+                        :class="selected ? 'w-full' : 'w-0'"
                       ></span>
                     </button>
                   </Tab>
@@ -277,8 +292,40 @@ const tabHeader = ["Описание", "Ссылки"];
                           uppercase
                           text-primary
                         "
-                      > Описание</h3>
-                      <div class="text-sm leading-6 -tracking-wider font-['Raleway-Regular'] text-blue-600 dark:text-gray-400">Fisherian Runaways, Child of #48 Bat Veil &amp; #42 Screw Nose. This mushroom is the result of the cross-breeding of two original one of a kind generative mushrooms donated back to the Fisherian Runaways project their generous owner. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ab laudantium magni maiores alias. Qui quas tempore cumque? Ab odio ut cupiditate sunt maxime labore esse doloremque. Rem, ut, eveniet molestias cum, placeat dolor aliquam assumenda hic fuga mollitia laboriosam. Perferendis esse, nisi illum repudiandae dolor ullam architecto quo autem quas enim, deleniti possimus error dicta provident consectetur ipsa magni modi repellendus id, labore ducimus laborum ipsum temporibus! Aspernatur maiores molestias reprehenderit blanditiis perferendis reiciendis deserunt, voluptates tempore corporis. Tenetur atque fugiat amet repellat et quia rem excepturi. Odit voluptates magnam eligendi maxime error, veritatis consequatur quae excepturi ipsa dolor recusandae?</div>
+                      >
+                        Описание
+                      </h3>
+                      <div
+                        class="
+                          text-sm
+                          leading-6
+                          -tracking-wider
+                          font-['Raleway-Regular']
+                          text-blue-600
+                          dark:text-gray-400
+                        "
+                      >
+                        Fisherian Runaways, Child of #48 Bat Veil &amp; #42
+                        Screw Nose. This mushroom is the result of the
+                        cross-breeding of two original one of a kind generative
+                        mushrooms donated back to the Fisherian Runaways project
+                        their generous owner. Lorem ipsum dolor sit amet
+                        consectetur, adipisicing elit. Ab laudantium magni
+                        maiores alias. Qui quas tempore cumque? Ab odio ut
+                        cupiditate sunt maxime labore esse doloremque. Rem, ut,
+                        eveniet molestias cum, placeat dolor aliquam assumenda
+                        hic fuga mollitia laboriosam. Perferendis esse, nisi
+                        illum repudiandae dolor ullam architecto quo autem quas
+                        enim, deleniti possimus error dicta provident
+                        consectetur ipsa magni modi repellendus id, labore
+                        ducimus laborum ipsum temporibus! Aspernatur maiores
+                        molestias reprehenderit blanditiis perferendis
+                        reiciendis deserunt, voluptates tempore corporis.
+                        Tenetur atque fugiat amet repellat et quia rem
+                        excepturi. Odit voluptates magnam eligendi maxime error,
+                        veritatis consequatur quae excepturi ipsa dolor
+                        recusandae?
+                      </div>
                     </div>
                   </div>
                 </TabPanel>
@@ -295,8 +342,18 @@ const tabHeader = ["Описание", "Ссылки"];
                           uppercase
                           text-primary
                         "
-                      > Ссылки</h3>
-                      <div class="text-sm leading-6 -tracking-wider text-blue-600 dark:text-gray-400"></div>
+                      >
+                        Ссылки
+                      </h3>
+                      <div
+                        class="
+                          text-sm
+                          leading-6
+                          -tracking-wider
+                          text-blue-600
+                          dark:text-gray-400
+                        "
+                      ></div>
                     </div>
                   </div>
                 </TabPanel>
@@ -304,13 +361,26 @@ const tabHeader = ["Описание", "Ссылки"];
             </TabGroup>
           </div>
         </div>
-        <div class="sticky z-10 bottom-0 bg-background md:-mx-2 hidden md:block">
-            <div class="-mx-4 border-t-2 border-gray900 px-4 pt-4 pb-5 sm:-mx-6 sm:px-6 md:mx-2 md:px-0 md:pt-5 lg:pt-6 lg:pb-7">
-                <div class="grid grid-cols-2 gap-3">
-                    <ButtonTail>Подписаться</ButtonTail>
-                    <ButtonTail state="success">Поделиться</ButtonTail>
-                </div>
+        <div
+          class="sticky z-10 bottom-0 bg-background md:-mx-2 hidden md:block"
+        >
+          <div
+            class="
+              -mx-4
+              border-t-2 border-gray900
+              px-4
+              pt-4
+              pb-5
+              sm:-mx-6 sm:px-6
+              md:mx-2 md:px-0 md:pt-5
+              lg:pt-6 lg:pb-7
+            "
+          >
+            <div class="grid grid-cols-2 gap-3">
+              <ButtonTail>Подписаться</ButtonTail>
+              <ButtonTail state="success">Поделиться</ButtonTail>
             </div>
+          </div>
         </div>
       </div>
     </div>
@@ -321,9 +391,8 @@ const tabHeader = ["Описание", "Ссылки"];
 
 <style scoped>
 .block::-webkit-scrollbar-thumb {
-    border-radius: 100px;
-    background: #8070D4;
-    border: 6px solid rgba(0,0,0,0.2);
-
+  border-radius: 100px;
+  background: #8070d4;
+  border: 6px solid rgba(0, 0, 0, 0.2);
 }
 </style>
