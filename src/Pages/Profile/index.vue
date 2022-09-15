@@ -14,6 +14,7 @@ const tabHeader = ["Мои мероприятия", "Редактировать 
 const Active = ref(false);
 const selectedItem = ref(false);
 const residentId = ref(false);
+const dropboxFile = ref('')
 
 const openDialog = () => {
   Active.value = !Active.value;
@@ -30,6 +31,8 @@ const selectItem = (item) => {
 const openTable = (item) => {
   residentId.value = item;
 }
+
+
 </script>
 
 <template>
@@ -63,7 +66,7 @@ const openTable = (item) => {
             :value="selectedItem?.title"
             disabled
           />
-          <DropBox></DropBox>
+          <DropBox v-model="dropboxFile"></DropBox>
         </div>
       </template>
       <template #dialog-actions>
@@ -222,7 +225,7 @@ const openTable = (item) => {
             </InfoBlock>
           </div>
         </div>
-        <!-- <div class="
+        <div class="
             profile-actions
             grow
             pt-6
@@ -273,13 +276,15 @@ const openTable = (item) => {
                         left-0
                         right-0
                         bottom-0
-                        -z-[1]
+                        z-[1]
                         h-0.5
-                        w-full
                         rounded-lg
                         bg-primary
                         md:z-0
-                      " :class="selected ? 'block' : 'hidden'"></span>
+                        translate-effect
+                        transition-[width]
+                          duration-300
+                      " :class="selected ? 'w-full' : 'w-0'"></span>
                   </button>
                 </Tab>
               </div>
@@ -386,9 +391,9 @@ const openTable = (item) => {
               </TabPanel>
             </TabPanels>
           </TabGroup>
-        </div> -->
-        <Application v-if="!residentId" @selectItem="openTable"></Application>
-        <Table v-else></Table>
+        </div>
+        <!-- <Application v-if="!residentId" @selectItem="openTable"></Application>
+        <Table v-else></Table> -->
       </div>
     </div>
   </div>

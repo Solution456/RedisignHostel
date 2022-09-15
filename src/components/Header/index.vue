@@ -103,11 +103,15 @@ const links = [
       </Menu>
     </div>
 
-    <nav class="nav flex items-center">
-      <div class="items hidden md:flex">
-        <div class="link" v-for="({ name, link }, id) in links" :key="{ id }">
-          <router-link class="route-link" :to="link">{{ name }}</router-link>
-        </div>
+    <nav class="nav  items-center">
+      <div class="items hidden md:inline-block">
+        <router-link
+          v-for="({ name, link }, id) in links"
+          :key="{ id }"
+          class="route-link mr-2 last:mr-0 "
+          :to="link"
+          >{{ name }}</router-link
+        >
       </div>
       <div class="block ltr:mr-1 rtl:ml-1 ltr:sm:mr-3 rtl:sm:ml-3 md:hidden">
         <button
@@ -151,17 +155,17 @@ const links = [
 <style lang="scss" scoped>
 .nav {
   .route-link {
-    margin-left: 12px;
+    box-sizing: border-box;
     color: #3269f6;
-    font-size: 20;
+    font-size: 1rem;
     font-weight: bold;
-    border-radius: 15px;
-    padding: 7px 30px;
+
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    padding: 7px 25px;
+    padding-bottom: 1.15rem;
     background-color: white;
     transition: all 0.5s ease;
-    &:first-child {
-      margin-left: 0px;
-    }
 
     &:hover {
       background-color: #3269f6;
