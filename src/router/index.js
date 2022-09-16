@@ -50,6 +50,12 @@ const routes = [
         name:'profile',
         component: () => import('../Pages/Profile/index.vue')
     },
+    {
+        path:'/tableResident/:id',
+        name:'tableResident',
+        component: () => import('../Pages/Profile/index.vue'),
+        props: true
+    },
 
 
 ]

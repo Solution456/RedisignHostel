@@ -1,8 +1,5 @@
 <script setup>
-import CardLayout from '../../../components/public/cardLayout.vue';
-import BaselineArrowUpward from '../../../assets/svg/baseline-arrow-upward.vue';
 import Table from '../../../components/Table/Table.vue';
-import { onMounted } from 'vue';
 
 const props = defineProps({
   id: {
@@ -10,7 +7,28 @@ const props = defineProps({
   },
 })
 
-
+const mockHeader = [
+  {
+    name: 'Житель',
+    value: 'resident'
+  },
+  {
+    name: 'Комната',
+    value: 'flat'
+  },
+  {
+    name: 'Баллы ССО',
+    value: 'sso'
+  },
+  {
+    name: 'Админ. баллы',
+    value: 'adm'
+  },
+  {
+    name: 'Акты',
+    value: 'acts'
+  },
+];
 </script>
 
 <template>
@@ -25,7 +43,7 @@ const props = defineProps({
 
     <section class="flat__content justify-center gap-4 mt-20 flex">
       <div class="flat__table flex flex-col w-full">
-        <Table />
+        <Table :mock-header="mockHeader"/>
       </div>
 
     </section>
