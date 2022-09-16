@@ -17,12 +17,11 @@ const selectItem = (item) => {
 <template>
 
   <div class="
-      application__grid
+      application
       grow
       pb-9
-      md:-mt-2.5 md:pt-1.5 md:pb-0 md:ltr:pl-7
-      lg:ltr:pl-10 lg:rtl:pr-10
-      xl:ltr:pl-14 xl:rtl:pr-14">
+      md:-mt-2.5 md:pt-1.5 md:pb-0
+      ">
     <div class="application__header">
       <div class="pb-6 w-full">
         <span class="
