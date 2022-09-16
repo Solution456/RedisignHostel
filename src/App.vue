@@ -57,13 +57,13 @@ watch(isMobile, (newIsMobile) =>{
       <headerVue @open-modal="openDialog" ></headerVue>
 
     </header>
-    <main class="min-h-screen bg-background py-4">
+    <main id="main" class="min-h-screen bg-background py-4">
       <router-view></router-view>
     </main>
   </div>
 </template>
 
-<style scoped>
+<style>
 .logo {
   height: 6em;
   padding: 1.5em;
@@ -72,11 +72,13 @@ watch(isMobile, (newIsMobile) =>{
 .logo:hover {
   filter: drop-shadow(0 0 2em #646cffaa);
 }
-.logo.vue:hover {
-  filter: drop-shadow(0 0 2em #42b883aa);
-}
-
 .customShadow {
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.translate-effect
+{
+  left: 50%;
+  transform: translate(-50%,0%);
 }
 </style>
