@@ -16,7 +16,6 @@
         transition-all
         border-primary
         bg-white
-        text-primary
         shadow-sm
         hover:bg-primary
         hover:text-white

@@ -50,11 +50,11 @@ const emitSelect = (event) => {
     <div class="sideCard-tw-content border-t border-dashed border-gray-200">
         <RadioGroup @update:model-value="emitSelect" v-model="radioSelect" class="grid grid-cols-1 gap-2 p-5">
           <RadioGroupOption v-slot="{ checked }" value="Прошедшие">
-            <ChipVue :class="checked? 'bg-primary text-white':''" 
+            <ChipVue :class="checked? 'bg-primary text-white':'text-primary'" 
             >Прошедшие</ChipVue>
           </RadioGroupOption>
           <RadioGroupOption v-slot="{ checked }" value="Актуальные">
-          <ChipVue :class="checked?'bg-primary text-white':''">Актуальные</ChipVue>
+          <ChipVue :class="checked?'bg-primary text-white':'text-primary'">Актуальные</ChipVue>
           </RadioGroupOption>
         </RadioGroup>
 
