@@ -79,7 +79,7 @@ const openTable = (item) => {
     </template>
   </Dialog>
 
-  <div v-if="false" class="application__form flex flex-col w-full">
+  <div class="application__form flex flex-col w-full">
     <Application @select-item="openTable" />
   </div>
 
