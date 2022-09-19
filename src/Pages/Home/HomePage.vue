@@ -10,6 +10,7 @@ import { useEventsStore } from "../../stores/events/events";
 import { ref } from "@vue/reactivity";
 import { useSortedEvents } from "../../composables/useSortedEvents";
 import { useSortedActualingEvents } from "../../composables/useSortedActualingEvents";
+import AppLoader from "../../components/public/appLoader.vue";
 
 const router = useRouter();
 const { CaraouselEvents, OtherEvents } = useEventsStore();
@@ -45,7 +46,15 @@ function pushRoute(nameRoute, param) {
       <div class="filter relative flex justify-center sm:justify-end">
         <SelectVue v-model="sortVariant" :options-items="options" />
       </div>
-      <div
+      <div v-if="false" class="loading h-full flex justify-center items-center mt-5">
+        <AppLoader />
+      </div>
+
+      <div v-if="false" class=" h-full flex justify-center items-center mt-5">
+        <span>Нет данных</span>
+      </div>
+      
+      <div v-if="true"
         class="
           main-content
           mt-7
@@ -59,6 +68,7 @@ function pushRoute(nameRoute, param) {
           3xl:grid-cols-3
         "
       >
+      
         <TransitionGroup name="event-list">
           <div
             class="main-content-item"
