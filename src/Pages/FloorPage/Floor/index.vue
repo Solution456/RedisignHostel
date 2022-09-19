@@ -1,7 +1,7 @@
 <script setup>
 import CardLayout from '../../../components/public/cardLayout.vue';
 import BaselineArrowUpward from '../../../assets/svg/baseline-arrow-upward.vue';
-import Table from '../../../components/Table/Table.vue';
+import Table from '../../../components/Table/index.vue';
 
 const props = defineProps({
   id: {

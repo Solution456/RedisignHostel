@@ -7,7 +7,7 @@ import Dialog from "../../components/public/dialog.vue";
 import InputGroup from "../../components/public/inputGroup.vue";
 import DropBox from "../../components/public/dropBox.vue";
 import Application from "../../components/Application/index.vue";
-import Table from "../../components/Table/Table.vue";
+import Table from "../../components/Table/index.vue";
 import { ref } from "vue";
 import { useRouter } from "vue-router";
 import { useTableStore } from '../../stores/table/table';

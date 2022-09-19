@@ -1,5 +1,5 @@
 <script setup>
-import Table from '../../../components/Table/Table.vue';
+import Table from '../../../components/Table/index.vue';
 
 const props = defineProps({
   id: {
