@@ -5,7 +5,7 @@ import CardLayout from '../public/cardLayout.vue';
 const props = defineProps({
   tableData: { type: Array },
   mockHeader: { type: Array },
-  residentId: { type: Number }
+  residentId: { type: [Number, String] }
 })
 
 const cols = computed(() => {

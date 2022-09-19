@@ -50,7 +50,7 @@ const selectItem = (item) => {
             </div>
           </div>
           <div class="overflow-hidden text-ellipsis -tracking-wider ltr:pl-2 rtl:pr-2">
-            <ButtonTail @click="$emit('selectItem', item)">Открыть</ButtonTail>
+            <ButtonTail @click="$emit('selectItem', parseInt(item))">Открыть</ButtonTail>
           </div>
         </TaskLayout>
 

@@ -1,3 +1,4 @@
+import path from 'path-browserify'
 import {createRouter, createWebHistory} from 'vue-router'
 
 import HomePage from '../Pages/Home/HomePage.vue'
@@ -48,14 +49,29 @@ const routes = [
     {
         path:'/profile',
         name:'profile',
-        component: () => import('../Pages/Profile/index.vue')
-    },
-    {
-        path:'/tableResident/:id',
-        name:'tableResident',
         component: () => import('../Pages/Profile/index.vue'),
-        props: true
+        children: [
+            {   
+                path: 'tableResident/:id',
+                name:'tableResident',
+                props:true,
+                component: () => import('../Pages/Profile/child/TheTableResident.vue'),
+                
+            },
+            {
+                path:'',
+                name:'profileMain',
+                component: () => import('../Pages/Profile/child/TheProfileMain.vue')
+            }
+            
+        ]
     },
+    // {
+    //     path:'/tableResident/:id',
+    //     name:'tableResident',
+    //     component: () => import('../Pages/Profile/index.vue'),
+    //     props: true
+    // },
 
 
 ]
