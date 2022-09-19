@@ -172,7 +172,7 @@ function pushRoute(nameRoute, param) {
   width: 95%;
   max-width: 1275px;
   margin: 0 auto;
-  margin-top: 75px !important;
+  padding-top: 75px !important;
 
   @media only screen and (max-width: 1275px) and (min-width: 961px) {
     .wrapper {

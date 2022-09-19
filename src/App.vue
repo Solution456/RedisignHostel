@@ -57,7 +57,7 @@ watch(isMobile, (newIsMobile) =>{
       <headerVue @open-modal="openDialog" ></headerVue>
 
     </header>
-    <main id="main" class="min-h-screen bg-background py-4">
+    <main id="main" class="min-h-screen bg-background">
       <router-view></router-view>
     </main>
   </div>
